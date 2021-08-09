@@ -15,6 +15,9 @@ function getMovement(select) {
             type: "get",
             success: function (data) {
                 $('#MovementTable').html(data);
+            },
+            error: function (data) {
+                $('#MovementTable').html("<p class=\"alert\">Bad request...</p>");
             }
         });
     }

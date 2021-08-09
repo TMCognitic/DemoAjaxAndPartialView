@@ -23,7 +23,12 @@ namespace DemoAjaxAndPartialView.Controllers
 
         public IActionResult Movements(string id)
         {
-            return PartialView(_service.GetAccountMovement(id));
+            IEnumerable<int> movements = _service.GetAccountMovement(id);
+
+            if (movements is null)
+                return BadRequest();
+
+            return PartialView(movements);
         }
     }
 }
