@@ -1,0 +1,24 @@
+﻿@model IEnumerable<int>
+
+<table>
+    <thead>
+        <tr>
+            <td>amount</td>
+        </tr>
+    </thead>
+    @foreach (int amount in Model)
+    {
+        if (amount < 0)
+        {
+            <tr>
+                <td class="retrait">@amount</td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td class="depot">@amount</td>
+            </tr>
+        }
+    }
+</table>

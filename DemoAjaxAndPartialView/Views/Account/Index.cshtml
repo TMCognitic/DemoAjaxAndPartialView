@@ -1,0 +1,13 @@
+﻿@model IEnumerable<string>
+
+<select title="accounts" onchange="getMovement(this)">
+    <option value="0">Choose an Account</option>
+    @foreach (string key in Model)
+    {
+        <option value="@key">Account : @key</option>
+    }
+</select>
+
+<div id="MovementTable">
+
+</div>
