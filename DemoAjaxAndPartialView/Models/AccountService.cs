@@ -26,5 +26,14 @@ namespace DemoAjaxAndPartialView.Models
             _items.TryGetValue(key, out List<int> movements);
             return movements;
         }
+
+        public bool AddAmount(string key, int value)
+        {
+            if (!_items.ContainsKey(key))
+                return false;
+
+            _items[key].Add(value);
+            return true;
+        }
     }
 }

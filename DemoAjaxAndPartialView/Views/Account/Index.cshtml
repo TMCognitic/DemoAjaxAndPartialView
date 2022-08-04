@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<string>
 
-<select title="accounts" onchange="getMovement(this)">
+<select id="accounts" title="accounts" onchange="getMovement(this)">
     <option value="0">Choose an Account</option>
     @foreach (string key in Model)
     {
@@ -10,4 +10,13 @@
 
 <div id="MovementTable">
 
+</div>
+
+<div>
+    <input id="amountquery" type="number" />
+    <button onclick="addAmountQuery()">Send by Query</button>
+</div>
+<div>
+    <input id="amountbody" type="number" />
+    <button onclick="addAmountBody()">Send by Body</button>
 </div>

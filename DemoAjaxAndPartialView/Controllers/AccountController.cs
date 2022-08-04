@@ -30,5 +30,16 @@ namespace DemoAjaxAndPartialView.Controllers
 
             return PartialView(movements);
         }
+
+        public IActionResult AddAmountQuery(string id, [FromQuery] int amount)
+        {
+            return _service.AddAmount(id, amount) ? Ok() : BadRequest();
+        }
+
+        [HttpPost]
+        public IActionResult AddAmountBody(string id, [FromBody] AmountForm form)
+        {
+            return _service.AddAmount(id, form.Amount) ? Ok() : BadRequest();
+        }
     }
 }
